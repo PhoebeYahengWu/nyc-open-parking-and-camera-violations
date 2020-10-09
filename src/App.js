@@ -8,10 +8,10 @@ class App extends Component {
   state = {
     violations: [],
     sel_violation: "",
-    // offet: 0,
-    // limit: 100,
+    offet: 0,
+    limit: 100,
     results: [],
-    filtered: []
+    filtered: [],
   };
 
   componentDidMount() {
@@ -55,17 +55,29 @@ class App extends Component {
   //   }
   // };
 
-  
-  searchViolations = async () => { 
+  searchViolations = async () => {
     const res = await axios.get(
       `https://data.cityofnewyork.us/resource/nc67-uf89.json`,
       {
         params: {
-          // $order: "issue_date DESC",
+          $offset: this.state.$offset,
+          $limit: this.state.limit,
           violation: this.state.sel_violation
         },
       }
     );
+
+    // const year = res.data.reduce(
+    //   (a, y, i) =>
+    //     (a = i
+    //       ? (a + parseInt(y.issue_date.split("").splice(6).join(""))) / 2
+    //       : parseInt(y.issue_date.split("").splice(6).join(""))),
+    //   0
+    // );
+    // console.log(year);
+
+    // console.log(res.data);
+
     this.setState({
       filtered: res.data,
     });
@@ -85,26 +97,25 @@ class App extends Component {
       <>
         <nav className="navbar navbar-light bg-dark">
           <span className="navbar-brand mb-0 h1 text-white pt-1">
-          NYC Open Parking and Camera Violations
+            NYC Open Parking and Camera Violations
           </span>
         </nav>
         <div className="container-fluid">
           <div className="row mt-2">
             <div className="col-md-12">
-            <h5 className="text-center">Choose Another Violation Type</h5> 
+              <h5 className="text-center">Choose Another Violation Type</h5>
               <SearchForm
                 results={this.state.violations}
                 handleInputChange={this.handleInputChange}
               />
-              <div className="alert alert-danger" role="alert">
+              {/* <div className="alert alert-danger" role="alert">
                 Number of Violations: {this.state.filtered.length}
-              </div>
+              </div> */}
             </div>
-
           </div>
 
           <div className="row">
-          <div className="col-md-12 mt-2">
+            <div className="col-md-12 mt-2">
               <ResultList results={this.state.filtered} />
             </div>
           </div>
