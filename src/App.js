@@ -52,7 +52,7 @@ class App extends Component {
   handleInputChange = (event) => {
     this.setState(
       {
-        sel_ofns: event.target.value,
+        sel_violation: event.target.value,
       },
       this.searchViolations
     );
