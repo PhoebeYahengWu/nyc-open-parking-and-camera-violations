@@ -8,6 +8,8 @@ class App extends Component {
   state = {
     violations: [],
     sel_violation: "",
+    // offet: 0,
+    // limit: 100,
     results: [],
     filtered: []
   };
@@ -34,13 +36,33 @@ class App extends Component {
       console.log(error);
     }
   };
+
+  // advanceOffset = (val) => {
+  //   if (val) {
+  //     this.setState(
+  //       {
+  //         offet: this.state.offet + this.state.limit,
+  //       },
+  //       this.searchViolations
+  //     );
+  //   } else if (this.state.offet - this.state.limit >= 0) {
+  //     this.setState(
+  //       {
+  //         offet: this.state.offet - this.state.limit,
+  //       },
+  //       this.searchViolations
+  //     );
+  //   }
+  // };
+
   
   searchViolations = async () => { 
     const res = await axios.get(
       `https://data.cityofnewyork.us/resource/nc67-uf89.json`,
       {
         params: {
-          violation: this.state.violation
+          // $order: "issue_date DESC",
+          violation: this.state.sel_violation
         },
       }
     );
@@ -86,6 +108,13 @@ class App extends Component {
               <ResultList results={this.state.filtered} />
             </div>
           </div>
+
+          {/* <div className="row">
+          <div className="col-md-12 text-center mb-2">
+            <button className="btn btn-outline-dark mr-1" onClick={() => this.advanceOffset(true)}>Prev</button>
+              <button className="btn btn-outline-dark ml-1" onClick={() => this.advanceOffset(false)}>Next</button>
+            </div>
+          </div> */}
         </div>
       </>
     );
