@@ -1,0 +1,15 @@
+nav {
+  justify-content: center !important;
+}
+
+#mapid {
+  height: 70vh;
+}
+
+button:focus,
+button:hover,
+select:focus,
+select:hover {
+  outline: none !important;
+  box-shadow: none !important;
+}
