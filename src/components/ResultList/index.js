@@ -38,6 +38,10 @@ function ResultList(props) {
               stepSize: 1,
             },
             stacked: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'count'
+            }
           },
         ],
       },
@@ -95,12 +99,16 @@ function ResultList(props) {
             ticks: {
               beginAtZero: true,
               min: 0,
-              stepSize: 5,
+              stepSize: 5
             },
             stacked: true,
-          },
-        ],
-      },
+            scaleLabel: {
+              display: true,
+              labelString: 'count'
+            }
+          }
+        ]
+      }
     };
 
     props.results.forEach((arrest) => {
@@ -194,6 +202,10 @@ function ResultList(props) {
               stepSize: 5,
             },
             stacked: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'count'
+            }
           }
         ],
         yAxes: [
