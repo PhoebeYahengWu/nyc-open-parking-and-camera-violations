@@ -62,7 +62,7 @@ function ResultList(props) {
           datasets: [
             {
               data: entries.map((x) => x[1]),
-              backgroundColor: colorArray,
+              backgroundColor: "#a4c3b2",
             },
           ],
         }}
