@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 nav {
   justify-content: center !important;
 }
@@ -12,4 +14,8 @@ select:focus,
 select:hover {
   outline: none !important;
   box-shadow: none !important;
+}
+
+h5 {
+  font-family: 'Roboto', sans-serif;
 }

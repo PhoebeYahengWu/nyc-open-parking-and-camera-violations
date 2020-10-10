@@ -9,6 +9,7 @@ function SearchForm({ results, handleInputChange }) {
         id="inputGroupSelect01"
         onChange={handleInputChange}
       >
+       <option value="FRONT OR BACK PLATE MISSING" selected="selected">FRONT OR BACK PLATE MISSING</option>
         {results.map((ele, i) => (
           <option key={i + "-el"} value={ele}>
             {ele}

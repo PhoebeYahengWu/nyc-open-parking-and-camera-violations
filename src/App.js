@@ -17,7 +17,7 @@ class App extends Component {
   componentDidMount() {
     this.setState(
       {
-        sel_violation: "DOUBLE PARKING",
+        sel_violation: "FRONT OR BACK PLATE MISSING",
       },
       this.searchViolations
     );
@@ -103,7 +103,7 @@ class App extends Component {
         <div className="container-fluid">
           <div className="row mt-2">
             <div className="col-md-12">
-              <h5 className="text-center">Choose Another Violation Type</h5>
+              <h5>Choose Another Violation Type</h5>
               <SearchForm
                 results={this.state.violations}
                 handleInputChange={this.handleInputChange}
