@@ -3,12 +3,12 @@ import { HorizontalBar, Pie, Bar, Line } from "react-chartjs-2";
 
 function ResultList(props) {
   var colorArray = [
-    "#FFB399",
-    "#E6B3B3",
-    "#6680B3",
-    "#FF99E6",
-    "#1AB399",
-    "#4D8066",
+    "#f5cac3",
+    "#ffcb77",
+    "#c5baaf",
+    "#cc8b86",
+    "#84a59d",
+    "#f7ede2",
   ];
 
   const LineChart = ({ type, chart_title }) => {
