@@ -268,7 +268,7 @@ function ResultList(props) {
         </div>
       </div>
 
-      <div className="row mt-2">
+      <div className="row">
 
       <div
           className="col-md-4"
@@ -300,6 +300,11 @@ function ResultList(props) {
 
 
 
+      </div>
+
+      <div className="row float-right">
+      <p className="pr-1" style={{fontSize:"1rem"}}>Data Source: <a aria-label="NYCOpenData" title="NYCOpenData" target="_blank"
+                  rel="noopener noreferrer" href="https://data.cityofnewyork.us/City-Government/Open-Parking-and-Camera-Violations/nc67-uf89">NYC OpenData</a></p>
       </div>
     
     </div>

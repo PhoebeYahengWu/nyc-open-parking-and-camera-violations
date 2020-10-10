@@ -103,8 +103,7 @@ class App extends Component {
         <div className="container-fluid">
           <div className="row mt-2">
             <div className="col-md-12">
-              <h5>Choose Another Violation Type<span className="float-right" style={{fontSize:"1rem"}}>Data Source: <a aria-label="NYCOpenData" title="NYCOpenData" target="_blank"
-                  rel="noopener noreferrer" href="https://data.cityofnewyork.us/City-Government/Open-Parking-and-Camera-Violations/nc67-uf89">NYC OpenData</a></span></h5>
+              <h5>Choose Another Violation Type</h5>
               <SearchForm
                 results={this.state.violations}
                 handleInputChange={this.handleInputChange}
@@ -118,8 +117,10 @@ class App extends Component {
           <div className="row">
             <div className="col-md-12">
               <ResultList results={this.state.filtered} />
+
             </div>
           </div>
+
 
           {/* <div className="row">
           <div className="col-md-12 text-center mb-2">

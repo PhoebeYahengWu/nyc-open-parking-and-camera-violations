@@ -19,3 +19,9 @@ select:hover {
 h5 {
   font-family: 'Roboto', sans-serif;
 }
+
+
+.card {
+  margin-bottom: 0.5rem;
+}
+
