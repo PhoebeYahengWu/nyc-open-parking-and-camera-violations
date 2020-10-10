@@ -211,18 +211,18 @@ function ResultList(props) {
           style={{ paddingLeft: "2px", paddingRight: "2px" }}
         >
           <div className="card" style={{ paddingBottom: "2px" }}>
-            <BarChart type="penalty_amount" chart_title="Penalty Amount" />
+            <BarChart type="reduction_amount" chart_title="Reduction Amount" />
           </div>
         </div>
       </div>
 
       <div className="row mt-2">
-        <div
+      <div
           className="col-md-6"
           style={{ paddingLeft: "2px", paddingRight: "2px" }}
         >
           <div className="card" style={{ paddingBottom: "2px" }}>
-            <BarChart type="interest_amount" chart_title="Interest Amount" />
+            <PieChart type="license_type" chart_title="License Type" />
           </div>
         </div>
 
@@ -231,7 +231,7 @@ function ResultList(props) {
           style={{ paddingLeft: "2px", paddingRight: "2px" }}
         >
           <div className="card" style={{ paddingBottom: "2px" }}>
-            <BarChart type="payment_amount" chart_title="Payment Amount" />
+            <BarChart type="violation_status" chart_title="Violation Status" />
           </div>
         </div>
       </div>
