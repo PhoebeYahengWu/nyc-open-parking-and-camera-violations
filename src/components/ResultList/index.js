@@ -263,7 +263,7 @@ function ResultList(props) {
           style={{ paddingLeft: "2px", paddingRight: "2px" }}
         >
           <div className="card" style={{ paddingBottom: "2px" }}>
-            <BarChart type="fine_amount" chart_title="Fine Amount" />
+            <BarChart type="fine_amount" chart_title="Fine Amount ($)" />
           </div>
         </div>
 
@@ -273,7 +273,7 @@ function ResultList(props) {
           style={{ paddingLeft: "2px", paddingRight: "2px" }}
         >
           <div className="card" style={{ paddingBottom: "2px" }}>
-            <BarChart type="reduction_amount" chart_title="Reduction Amount" />
+            <BarChart type="reduction_amount" chart_title="Reduction Amount ($)" />
           </div>
         </div>
 
