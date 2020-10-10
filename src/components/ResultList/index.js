@@ -1,5 +1,5 @@
 import React from "react";
-import { Bar, Line } from "react-chartjs-2";
+import { Pie, Bar, Line } from "react-chartjs-2";
 
 function ResultList(props) {
   var colorArray = [
@@ -131,6 +131,49 @@ function ResultList(props) {
     );
   };
 
+
+  const PieChart = ({ type, chart_title }) => {
+    const obj = {};
+
+    let options = {
+      legend: {
+        display: true,
+      },
+      title: {
+        display: true,
+        text: chart_title,
+      }
+    };
+
+    props.results.forEach((arrest) => {
+      const key = arrest[type];
+      if (key)
+        if (obj[key]) {
+          obj[key] += 1;
+        } else {
+          obj[key] = 1;
+        }
+    });
+
+    let entries =
+      Object.entries(obj).sort((a, b) => (a[0] > b[0] ? 1 : -1)) || [];
+    return (
+      <Pie
+        data={{
+          labels: entries.map((x) => x[0]),
+          datasets: [
+            {
+              data: entries.map((x) => x[1]),
+              backgroundColor: colorArray,
+            },
+          ],
+        }}
+        options={options}
+      />
+    );
+  };
+
+
   return (
     <div className="container-fluid mb-2">
       <div className="row mt-2">
@@ -159,7 +202,7 @@ function ResultList(props) {
           style={{ paddingLeft: "2px", paddingRight: "2px" }}
         >
           <div className="card" style={{ paddingBottom: "2px" }}>
-            <BarChart type="issuing_agency" chart_title="Issuing Agency" />
+            <PieChart type="issuing_agency" chart_title="Issuing Agency" />
           </div>
         </div>
 
@@ -169,6 +212,26 @@ function ResultList(props) {
         >
           <div className="card" style={{ paddingBottom: "2px" }}>
             <BarChart type="penalty_amount" chart_title="Penalty Amount" />
+          </div>
+        </div>
+      </div>
+
+      <div className="row mt-2">
+        <div
+          className="col-md-6"
+          style={{ paddingLeft: "2px", paddingRight: "2px" }}
+        >
+          <div className="card" style={{ paddingBottom: "2px" }}>
+            <BarChart type="interest_amount" chart_title="Interest Amount" />
+          </div>
+        </div>
+
+        <div
+          className="col-md-6"
+          style={{ paddingLeft: "2px", paddingRight: "2px" }}
+        >
+          <div className="card" style={{ paddingBottom: "2px" }}>
+            <BarChart type="payment_amount" chart_title="Payment Amount" />
           </div>
         </div>
       </div>
