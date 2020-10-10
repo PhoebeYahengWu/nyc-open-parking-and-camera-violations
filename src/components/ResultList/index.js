@@ -11,7 +11,7 @@ function ResultList(props) {
     "#4D8066",
   ];
 
-  const LineChart = ({ type }) => {
+  const LineChart = ({ type, chart_title }) => {
     const obj = {};
 
     let options = {
@@ -20,7 +20,7 @@ function ResultList(props) {
       },
       title: {
         display: true,
-        text: "Number of Violations Over Time",
+        text: chart_title,
       },
       scales: {
         xAxes: [
@@ -176,53 +176,13 @@ function ResultList(props) {
 
   return (
     <div className="container-fluid mb-2">
-      <div className="row mt-2">
+      <div className="row">
         <div
           className="col-md-6"
           style={{ paddingLeft: "2px", paddingRight: "2px" }}
         >
           <div className="card" style={{ paddingBottom: "2px" }}>
-            <LineChart type="issue_date" />
-          </div>
-        </div>
-
-        <div
-          className="col-md-6"
-          style={{ paddingLeft: "2px", paddingRight: "2px" }}
-        >
-          <div className="card" style={{ paddingBottom: "2px" }}>
-            <BarChart type="fine_amount" chart_title="Fine Amount" />
-          </div>
-        </div>
-      </div>
-
-      <div className="row mt-2">
-        <div
-          className="col-md-6"
-          style={{ paddingLeft: "2px", paddingRight: "2px" }}
-        >
-          <div className="card" style={{ paddingBottom: "2px" }}>
-            <PieChart type="issuing_agency" chart_title="Issuing Agency" />
-          </div>
-        </div>
-
-        <div
-          className="col-md-6"
-          style={{ paddingLeft: "2px", paddingRight: "2px" }}
-        >
-          <div className="card" style={{ paddingBottom: "2px" }}>
-            <BarChart type="reduction_amount" chart_title="Reduction Amount" />
-          </div>
-        </div>
-      </div>
-
-      <div className="row mt-2">
-      <div
-          className="col-md-6"
-          style={{ paddingLeft: "2px", paddingRight: "2px" }}
-        >
-          <div className="card" style={{ paddingBottom: "2px" }}>
-            <PieChart type="license_type" chart_title="License Type" />
+            <LineChart type="issue_date" chart_title="Number of Violations Over Time"/>
           </div>
         </div>
 
@@ -235,6 +195,41 @@ function ResultList(props) {
           </div>
         </div>
       </div>
+
+      <div className="row mt-2">
+
+      <div
+          className="col-md-4"
+          style={{ paddingLeft: "2px", paddingRight: "2px" }}
+        >
+          <div className="card" style={{ paddingBottom: "2px" }}>
+            <BarChart type="fine_amount" chart_title="Fine Amount" />
+          </div>
+        </div>
+
+
+        <div
+          className="col-md-4"
+          style={{ paddingLeft: "2px", paddingRight: "2px" }}
+        >
+          <div className="card" style={{ paddingBottom: "2px" }}>
+            <BarChart type="reduction_amount" chart_title="Reduction Amount" />
+          </div>
+        </div>
+
+        <div
+          className="col-md-4"
+          style={{ paddingLeft: "2px", paddingRight: "2px" }}
+        >
+          <div className="card" style={{ paddingBottom: "2px" }}>
+            <PieChart type="issuing_agency" chart_title="Issuing Agency" />
+          </div>
+        </div>
+
+
+
+      </div>
+    
     </div>
   );
 }
