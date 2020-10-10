@@ -95,7 +95,7 @@ function ResultList(props) {
             ticks: {
               beginAtZero: true,
               min: 0,
-              stepSize: 1,
+              stepSize: 5,
             },
             stacked: true,
           },
@@ -188,22 +188,22 @@ function ResultList(props) {
       scales: {
         xAxes: [
           {
-            gridLines: {
-              display: false,
-            },
-          },
-        ],
-        yAxes: [
-          {
             ticks: {
               beginAtZero: true,
               min: 0,
-              stepSize: 1,
+              stepSize: 5,
             },
             stacked: true,
-          },
+          }
         ],
-      },
+        yAxes: [
+          {
+            gridLines: {
+              display: false,
+            }
+          }
+        ]
+      }
     };
 
     props.results.forEach((arrest) => {
