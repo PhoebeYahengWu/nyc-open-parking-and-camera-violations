@@ -8,8 +8,8 @@ class App extends Component {
   state = {
     violations: [],
     sel_violation: "",
-    offet: 0,
-    limit: 100,
+    // offet: 0,
+    // limit: 100,
     results: [],
     filtered: [],
   };
@@ -60,8 +60,8 @@ class App extends Component {
       `https://data.cityofnewyork.us/resource/nc67-uf89.json`,
       {
         params: {
-          $offset: this.state.$offset,
-          $limit: this.state.limit,
+          // $offset: this.state.$offset,
+          // $limit: this.state.limit,
           violation: this.state.sel_violation
         },
       }
