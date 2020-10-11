@@ -67,16 +67,7 @@ class App extends Component {
       }
     );
 
-    // const year = res.data.reduce(
-    //   (a, y, i) =>
-    //     (a = i
-    //       ? (a + parseInt(y.issue_date.split("").splice(6).join(""))) / 2
-    //       : parseInt(y.issue_date.split("").splice(6).join(""))),
-    //   0
-    // );
-    // console.log(year);
 
-    // console.log(res.data);
 
     res.data = res.data.filter(function(x) { return x.issue_date.slice(6)==="2020" }) 
 
