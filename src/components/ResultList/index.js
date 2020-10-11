@@ -103,7 +103,7 @@ function ResultList(props) {
             ticks: {
               beginAtZero: true,
               min: 0,
-              stepSize: 10
+              precision: 0
             },
             stacked: true,
             scaleLabel: {
