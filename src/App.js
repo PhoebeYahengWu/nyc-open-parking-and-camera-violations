@@ -78,6 +78,8 @@ class App extends Component {
 
     // console.log(res.data);
 
+    res.data = res.data.filter(function(x) { return x.issue_date.slice(6)==="2020" }) 
+
     this.setState({
       filtered: res.data,
     });
