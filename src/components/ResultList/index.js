@@ -75,7 +75,7 @@ function ResultList(props) {
     );
   };
 
-  const BarChart = ({ type, chart_title }) => {
+  const BarChart = ({ type, chart_title, xlabel }) => {
     const obj = {};
 
     let options = {
@@ -92,6 +92,10 @@ function ResultList(props) {
             gridLines: {
               display: false,
             },
+            scaleLabel: {
+              display: true,
+              labelString: xlabel
+            }
           },
         ],
         yAxes: [
@@ -99,7 +103,7 @@ function ResultList(props) {
             ticks: {
               beginAtZero: true,
               min: 0,
-              stepSize: 5
+              stepSize: 10
             },
             stacked: true,
             scaleLabel: {
@@ -263,7 +267,7 @@ function ResultList(props) {
           style={{ paddingLeft: "2px", paddingRight: "2px" }}
         >
           <div className="card" style={{ paddingBottom: "2px" }}>
-            <HorizontalBarChart type="violation_status" chart_title="Violation Status" />
+            <HorizontalBarChart type="violation_status" chart_title="Number of Violation Status" />
           </div>
         </div>
       </div>
@@ -275,7 +279,7 @@ function ResultList(props) {
           style={{ paddingLeft: "2px", paddingRight: "2px" }}
         >
           <div className="card" style={{ paddingBottom: "2px" }}>
-            <BarChart type="fine_amount" chart_title="Fine Amount ($)" />
+            <BarChart type="fine_amount" chart_title="Number of Fine" xlabel="Fine ($)" />
           </div>
         </div>
 
@@ -285,7 +289,7 @@ function ResultList(props) {
           style={{ paddingLeft: "2px", paddingRight: "2px" }}
         >
           <div className="card" style={{ paddingBottom: "2px" }}>
-            <BarChart type="reduction_amount" chart_title="Reduction Amount ($)" />
+            <BarChart type="reduction_amount" chart_title="Number of Reduction" xlabel="Reduction ($)"/>
           </div>
         </div>
 
